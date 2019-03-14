@@ -30,7 +30,7 @@
 	- git reset 옵션 HEAD~ (~갯수만큼 뒤로) = branch pointer 이동(commit 취소)
 	(option : hard(수정 내용 전부삭제), soft(스테이지에 그대로 있기 : 빠뜨린 내용 추가하려고 할때, commit 취소 ), mixed(스테이지에서 내려오기 : add 취소))
 
-	- git stash = 작업하던 내용을 잠깐 내 호주머니같은곳에 보관하기
+	- git stash -u = 작업하던 내용을 잠깐 내 호주머니같은곳에 보관하기
 
 	- git stash pop = 가장 최근 stash된것 가져오기(list에서 지우면서 가져오기)
 
@@ -52,7 +52,7 @@
 	- git remote add origin http://xxx/ = git hub 서버에 remote 저장소 등록하고 이름은 origin으로 만들기
 
 	- git push -u origin master = local에서 작업한 내용을 git hub origin에 추가하기
-	 [ origin/master ]가 만들어짐. git hub의 상태를 추적하는 branch pointer. 다른사람이 push하거나 다른곳에서 push하게되면 갈라지게됨.(remote에서 변경사항 patch한 후에 master branch와 merge해야됨.)
+	 [ origin/master ]가 만들어짐. git hub의 상태를 추적하는 branch pointer. 다른사람이 push하거나 다른곳에서 push하게되면 갈라지게됨.(remote에서 변경사항 fetch한 후에 master branch와 merge해야됨.)
 
 	- git clone https://xxx = 외부에서 작업한 파일을 집에서 클론 할 폴더에다가 클론하기(최초한번만). 
 		1. 이후는 변경사항만 받기. (git fetch origin master). 
@@ -95,7 +95,12 @@
 
 reset :	[                             hard                                 ]
 	                             [                 mixed                   ]
-	                                                 [        soft         ]             
+	                                                 [        soft         ]      
+
+
+
+
+
 	</div>
 </body>
 </html>
