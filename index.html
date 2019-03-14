@@ -43,7 +43,7 @@
 	- git stash drop [stash id] = stash 목록 지우기
 
 	- git checkout . = unstaged 수정내용 모두 삭제하기
-	
+
 	- git clean -fd = untracked file 과 directory 를 모두 삭제하기
 
 
@@ -61,15 +61,23 @@
 
 
 
+	* git-gui에서 그래프 확인가능.
 
 	* commit을 하면 branch pointer가 바뀌고 checkout하면 HEAD가 바뀜.
+
 	* 작업 후에 status를 쳐서 변경사항이 있는지, add,commit을 해야되는지 확인.
+
 	* merge 할때 HEAD를 master로 checkout한다음 merge한다. (변경사항이 겹치지않으면 자동병합됨.)
 	  (변경사항이 겹치면 merge되기 전에 수정할 부분을 표시해 준다. 표시된 부분을 수정 후에 add, commit하면 된다.)
-	* lab1에서 작업하다가 master에서 작업해야 될게 생기게 될 경우, lab1의 내용을 add한 후에 stash로 주머니에 가지고 있다가 master로 checkout 해서 작업 완료 후에 commit 후 lab으로 다시 돌아와서 stash pop으로 붙여넣기.
 
+	* lab1에서 작업하다가 master에서 작업해야 될 경우, lab1의 내용을 add한 후에 stash로 주머니에 가지고 있다가 master로 checkout 해서 작업 완료 후에 commit 후 lab으로 다시 돌아와서 stash pop으로 붙여넣기.
 
+	* remote 저장소에 oigin/master pointer가 있는 이유 : 집에서 github 파일을 클론으로 받을 때 완충작용(덮어쓰기 방지). remote 저장소의 현재 commit 상태를 나타내줌. 
 
+	* 시나리오 
+		 학원에서 작업 후 add, commit 해서 github로 push ==> 집에서 github 파일 clone 후 fetch+merge(pull)한다. 
+
+	* 따로 테스트하고 싶을때는 lab branch따로 만들어서 해야 pull해서 올때 충돌나지않음. master branch는 내려받는 용도로 사용. 테스트하다가 중간에 master로 갈때는 작업내용을 stash하고 가야 충돌나지않음.
 
 
 	* https://docs.google.com/document/d/1cnJGSGYFCCgfwz5C2M33Q_OUV_6ubCvqerqLfLSBNqA/edit
