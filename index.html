@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index.html</title>
+	<style>
+		.m{
+
+			text-shadow: 5px 5px 2px #c720c7;
+		}
+	</style>
+</head>
+<body>
+	<div class="m" style="">
+
+	===== git	
+	git init = 깃으로 관리하겠다.
+	git status = 상태보기( 빨간색 : 변경 사항은 표시되지만 아직 추적은 하지 않음)
+	git add . = 의미있는 작업을 했다고 판단했으면 사진을 찍기 전 stage로 올리기 (초록색)
+	git commit -m "" = 사진찍어서 추적 준비완료 시키기.
+	git checkout HEAD~ = 커서를 예전 사진으로 옮기기. <=> git checkout master
+	 [checkout 하기전에 add, commit 하고 하기] 
+	git merge lab1 = 합칠 곳으로 checkout 한다음 합칠 branch적으면됨.
+	git reset 옵션 HEAD~ (~갯수만큼 뒤로) = branch pointer 이동(commit 취소)
+	(option : hard(수정 내용 전부삭제), soft(스테이지에서 내려오기 : ), mixed(스테이지에 그대로 있기 : 빠뜨린 내용 추가하려고 할때))
+	git stash = 작업하던 내용을 잠깐 내 호주머니같은곳에 보관하기
+	git stash pop = 가장 최근 stash된것 가져오기(list에서 지우면서 가져오기)
+	git stash apply [stash id] = stash된것 가져오기(list에서 안지우고 가져오기)
+	git stash save -u = untracked file 도 주머니에 넣기
+	git stash list = stash 목록
+	git stash drop [stash id] = stash 목록 지우기
+	git checkout . = unstaged 수정내용 모두 삭제하기
+	git clean -fd = untracked file 과 directory 를 모두 삭제하기
+
+
+
+	===== git hub
+	git remote add origin http://xxx/ = git hub 서버에 remote 저장소 등록하고 이름은 origin으로 만들기
+	git push -u origin master = local에서 작업한 내용을 git hub origin에 추가하기
+	 [ origin/master ]가 만들어짐. git hub의 상태를 추적하는 branch pointer. 다른사람이 push하거나 다른곳에서 push하게되면 갈라지게됨.(remote에서 변경사항 patch한 후에 master branch와 merge해야됨.)
+
+
+
+
+	* commit을 하면 branch pointer가 바뀌고 checkout하면 HEAD가 바뀜.
+	* 작업 후에 status를 쳐서 변경사항이 있는지, add,commit을 해야되는지 확인.
+	* merge 할때 HEAD를 master로 checkout한다음 merge한다. (변경사항이 겹치지않으면 자동병합됨.)
+	  (변경사항이 겹치면 merge되기 전에 수정할 부분을 표시해 준다. 표시된 부분을 수정 후에 add, commit하면 된다.)
+	* lab1에서 작업하다가 master에서 작업해야 될게 생기게 될 경우, lab1의 내용을 add한 후에 stash로 주머니에 가지고 있다가 master로 checkout 해서 작업 완료 후에 commit 후 lab으로 다시 돌아와서 stash pop으로 붙여넣기.
+
+
+
+
+
+	* https://docs.google.com/document/d/1cnJGSGYFCCgfwz5C2M33Q_OUV_6ubCvqerqLfLSBNqA/edit
+
+	 수업 내용 add, commit 해서 git hub에 올림 [dropbox 대체]
+
+
+
+
+
+
+
+		 working directory       |       stage       |     local repository
+		       준비            ====>      add      ====>         commit
+
+reset :	[                             hard                                 ]
+	                             [                 mixed                   ]
+	                                                 [        soft         ]             
+	</div>
+</body>
+</html>
